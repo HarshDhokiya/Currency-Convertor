@@ -56,7 +56,7 @@ function App() {
           <div className="relative w-full h-0.5 my-6">
             <button
               type="button"
-              className=""
+              className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-none border-blue-300 rounded-md bg-gradient-to-r from-blue-700 to-blue-500 text-white px-3 py-1 shadow-md hover:scale-105 transition-transform duration-200"
               onClick={swap}
             >
               Swap
