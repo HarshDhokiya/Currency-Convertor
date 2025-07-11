@@ -26,21 +26,24 @@ function App() {
 
   return (
     <div
-      className="w-full h-screen flex justify-center items-center bg-cover bg-no-repeat bg-center"
+      className="w-full h-screen flex justify-center items-center bg-cover bg-no-repeat bg-center text-white"
       style={{
         backgroundImage: `
-          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-          url('https://images.pexels.com/photos/4386430/pexels-photo-4386430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1080')
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+          url('https://png.pngtree.com/thumb_back/fh260/background/20220512/pngtree-growing-chart-against-the-background-of-the-usa-america-flag-candlestick-image_1298780.jpg')
         `,
+        fontFamily: 'Inter, sans-serif',
       }}
     >
-      <div className="w-full max-w-md mx-auto border border-gray-300 rounded-lg p-5 shadow-lg backdrop-blur-sm bg-white/80">
+      <div className="w-full max-w-md mx-auto rounded-xl p-6 shadow-2xl backdrop-blur-lg bg-white/20 border-white/30">
         <form
           onSubmit={(e) => {
             e.preventDefault()
             convert()
           }}
         >
+          <h1 className="text-xl font-semibold mb-6 text-white drop-shadow-lg">Currency Converter</h1>
+
           <InputBox
             label="From"
             amount={amount}
@@ -50,10 +53,10 @@ function App() {
             onAmountChange={(val) => setAmount(val)}
           />
 
-          <div className="relative w-full h-0.5 my-4">
+          <div className="relative w-full h-0.5 my-6">
             <button
               type="button"
-              className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5"
+              className=""
               onClick={swap}
             >
               Swap
@@ -71,7 +74,7 @@ function App() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg mt-4"
+            className="w-full bg-gradient-to-r from-blue-700 to-blue-500 hover:from-blue-800 hover:to-blue-600 text-white font-medium px-4 py-3 rounded-lg mt-6 transition-all duration-200 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={!amount || !currencyInfo[to]}
           >
             Convert {from.toUpperCase()} to {to.toUpperCase()}
